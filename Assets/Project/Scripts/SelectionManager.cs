@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
 {
-    [SerializeField] private string selectableTag;
+    [SerializeField] private string selectableTag = "Selectable";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
 
@@ -15,25 +15,30 @@ public class SelectionManager : MonoBehaviour
         if(_selection != null)
         {
             var selectionRenderer = _selection.GetComponent<Renderer>();
-            selectionRenderer.material = defaultMaterial;
-            _selection = null;
+            if (selectionRenderer != null)
+            {
+                selectionRenderer.material = defaultMaterial;
+            }
         }
 
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if(Physics.Raycast(ray, out hit))
+
+        _selection = null;
+        if(Physics.Raycast(ray, out var hit))
         {
             var selection = hit.transform;
-            
             if (selection.CompareTag(selectableTag))
             {
-                print(selectableTag);
-                var selectionRenderer = selection.GetComponent<Renderer>();
-                if (selectionRenderer != null)
-                {
-                    selectionRenderer.material = highlightMaterial;
-                }
                 _selection = selection;
+            }
+        }
+
+        if (_selection != null)
+        {
+            var selectionRenderer = _selection.GetComponent<Renderer>();
+            if(selectionRenderer != null)
+            {
+                selectionRenderer.material = highlightMaterial;
             }
         }
     }

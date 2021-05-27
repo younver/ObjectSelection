@@ -1257,6 +1257,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1579830066}
   - component: {fileID: 1579830065}
+  - component: {fileID: 1579830067}
+  - component: {fileID: 1579830068}
   m_Layer: 0
   m_Name: SelectionManager
   m_TagString: Untagged
@@ -1276,9 +1278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd2f8d99cf9a514db4c48bad95ae4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 7f0983ac39441ab47a5ae48aab1d3b98, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 2cba26d88f591064da24534a70b1ea98, type: 2}
 --- !u!4 &1579830066
 Transform:
   m_ObjectHideFlags: 0
@@ -1293,6 +1292,33 @@ Transform:
   m_Father: {fileID: 1298545745}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1579830067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579830064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a6e8f5f44f33647805c92191bbdea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: 7f0983ac39441ab47a5ae48aab1d3b98, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 2cba26d88f591064da24534a70b1ea98, type: 2}
+--- !u!114 &1579830068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579830064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0829ebe8fc735f4d94bf93941b122ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableTag: Selectable
 --- !u!1 &1732033319
 GameObject:
   m_ObjectHideFlags: 0
